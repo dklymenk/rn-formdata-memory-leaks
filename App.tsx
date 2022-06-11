@@ -1,5 +1,12 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 const App = () => {
   return (
@@ -7,6 +14,7 @@ const App = () => {
       <ScrollView>
         <View style={styles.content}>
           <Text style={styles.heading}>Axios memery leak demo</Text>
+          <Button title="Upload" onPress={() => console.log('Upload')} />
         </View>
       </ScrollView>
     </SafeAreaView>
