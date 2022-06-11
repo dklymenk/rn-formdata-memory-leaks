@@ -10,4 +10,4 @@ yarn ios
 
 After the app gets built and started on simulator, attach the Xcode debugger to the process: Debug > Attach to process > axiousMemoryLeaksDemo.
 
-Or just build and run the app from the Xcode right away.
+Or just build and run the app from Xcode right away.
