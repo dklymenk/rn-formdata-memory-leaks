@@ -3,7 +3,6 @@ import {
   ActivityIndicator,
   Button,
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -35,14 +34,24 @@ const files: File[] = [
 const File: React.FC<{file: File}> = ({file}) => {
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleUpload = async () => {
-    setIsLoading(true);
-    console.log('Uploading...');
-    const form = new FormData();
-    form.append('file', file);
-    const headers = {
-      'Content-Type': 'multipart/form-data',
-    };
+  const headers = {
+    'Content-Type': 'multipart/form-data',
+  };
+
+  const fetchUpload = async (form: FormData) => {
+    try {
+      const response = await fetch('https://0x0.st', {
+        headers: new Headers(headers),
+        method: 'POST',
+        body: form,
+      }).then(res => res.text());
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const axiosUpload = async (form: FormData) => {
     try {
       const {data} = await axios.post('https://0x0.st', form, {
         headers,
@@ -51,6 +60,15 @@ const File: React.FC<{file: File}> = ({file}) => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleUpload = async () => {
+    setIsLoading(true);
+    console.log('Uploading...');
+    const form = new FormData();
+    form.append('file', file);
+    // await fetchUpload(form);
+    await axiosUpload(form);
     setIsLoading(false);
   };
 
