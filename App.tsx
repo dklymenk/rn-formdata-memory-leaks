@@ -13,7 +13,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.content}>
-          <Text style={styles.heading}>Axios memery leak demo</Text>
+          <Text style={styles.heading}>Axios form data memory leak demo</Text>
           <Button title="Upload" onPress={() => console.log('Upload')} />
         </View>
       </ScrollView>
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     minHeight: '100%',
   },
   heading: {
+    textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
