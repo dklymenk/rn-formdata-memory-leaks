@@ -66,14 +66,12 @@ const File: React.FC<{file: File}> = ({file}) => {
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.content}>
-          <Text style={styles.heading}>Axios form data memory leak demo</Text>
-          {files.map((file, index) => (
-            <File key={index} file={file} />
-          ))}
-        </View>
-      </ScrollView>
+      <View style={styles.content}>
+        <Text style={styles.heading}>Axios form data memory leak demo</Text>
+        {files.map((file, index) => (
+          <File key={index} file={file} />
+        ))}
+      </View>
     </SafeAreaView>
   );
 };
