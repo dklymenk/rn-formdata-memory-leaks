@@ -10,17 +10,26 @@ import {
 } from 'react-native';
 import axios from 'axios';
 
+const files = [
+  {
+    uri: 'https://freetestdata.com/wp-content/uploads/2022/02/Free_Test_Data_15MB_MP4.mp4',
+    name: 'Free_Test_Data_15MB_MP4.mp4',
+    type: 'video/mp4',
+  },
+  {
+    uri: 'https://jsoncompare.org/LearningContainer/SampleFiles/Video/MP4/Sample-MP4-Video-File-Download.mp4',
+    name: 'Sample-MP4-Video-File-Download.mp4',
+    type: 'video/mp4',
+  },
+];
+
 const App = () => {
   const [loading, setLoading] = React.useState(false);
   const handleUpload = async () => {
     setLoading(true);
     console.log('Uploading...');
     const form = new FormData();
-    form.append('file', {
-      uri: 'https://freetestdata.com/wp-content/uploads/2022/02/Free_Test_Data_15MB_MP4.mp4',
-      name: 'Free_Test_Data_15MB_MP4.mp4',
-      type: 'video/mp4',
-    });
+    form.append('file', files[0]);
     const headers = {
       'Content-Type': 'multipart/form-data',
     };
