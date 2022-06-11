@@ -12,11 +12,13 @@ import axios from 'axios';
 
 const files = [
   {
+    size: '15.8MB',
     uri: 'https://freetestdata.com/wp-content/uploads/2022/02/Free_Test_Data_15MB_MP4.mp4',
     name: 'Free_Test_Data_15MB_MP4.mp4',
     type: 'video/mp4',
   },
   {
+    size: '47.9MB',
     uri: 'https://jsoncompare.org/LearningContainer/SampleFiles/Video/MP4/Sample-MP4-Video-File-Download.mp4',
     name: 'Sample-MP4-Video-File-Download.mp4',
     type: 'video/mp4',
